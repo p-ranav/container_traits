@@ -1,6 +1,6 @@
 # container_traits
 
-This library provides convenience helper functions that enable compile-time checks for whether STL container types have specific member functions with specific signatures. 
+This library enables compile-time checks for whether STL container types have specific member functions with specific signatures. 
 
 ```cpp
 #include "container_traits.h"
