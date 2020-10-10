@@ -3,16 +3,15 @@
 
 namespace container_traits {
 
-template <typename, typename T> struct has_assignment_operator: std::false_type {};
+template <typename, typename T> struct has_assignment_operator : std::false_type {};
 
 template <typename C, typename Ret, typename... Args>
 struct has_assignment_operator<C, Ret(Args...)> {
 private:
   template <typename T>
-  static constexpr auto check(T *) -> typename std::is_same<
-      decltype(std::declval<T>().operator=(std::declval<Args>()...)),
-      Ret
-      >::type; // attempt to call it and see if the return type is correct
+  static constexpr auto check(T *) ->
+      typename std::is_same<decltype(std::declval<T>().operator=(std::declval<Args>()...)),
+                            Ret>::type;
 
   template <typename> static constexpr std::false_type check(...);
 
