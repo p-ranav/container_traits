@@ -53,7 +53,9 @@
         "include/container_traits/has_value_comp.h",
         "include/container_traits/has_hash_function.h",
         "include/container_traits/has_key_eq.h",
-        "include/container_traits/has_get_allocator.h"
+        "include/container_traits/has_get_allocator.h",
+        "include/container_traits/has_assignment_operator.h",
+        "include/container_traits/has_subscript_operator.h"
     ],
     "include_paths": ["include"]
 }
