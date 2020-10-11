@@ -3,17 +3,6 @@
 This library enables compile-time checks for whether STL container types have specific member functions with specific signatures. 
 
 ```cpp
-#include "container_traits.h"
-using namespace container_traits;
-#include <iostream>
-#include <vector>
-#include <queue>
-#include <deque>
-#include <map>
-#include <list>
-#include <array>
-#include <string>
-
 int main() {
   std::cout << std::boolalpha;
 
