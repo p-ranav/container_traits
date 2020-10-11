@@ -1285,3 +1285,195 @@ public:
 };
 
 } // namespace container_traits
+#pragma once
+#include <array>
+
+namespace container_traits {
+
+template <typename T>
+struct is_array_type: std::false_type {};
+
+template <class T, std::size_t N>
+struct is_array_type<std::array<T, N>> : std::true_type {};
+
+}
+#pragma once
+#include <vector>
+
+namespace container_traits {
+
+template <typename T>
+struct is_vector_type: std::false_type {};
+
+template <class T, class Allocator>
+struct is_vector_type<std::vector<T, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <deque>
+
+namespace container_traits {
+
+template <typename T>
+struct is_deque_type: std::false_type {};
+
+template <class T, class Allocator>
+struct is_deque_type<std::deque<T, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <list>
+
+namespace container_traits {
+
+template <typename T>
+struct is_list_type: std::false_type {};
+
+template <class T, class Allocator>
+struct is_list_type<std::list<T, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <forward_list>
+
+namespace container_traits {
+
+template <typename T>
+struct is_forward_list_type: std::false_type {};
+
+template <class T, class Allocator>
+struct is_forward_list_type<std::forward_list<T, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <set>
+
+namespace container_traits {
+
+template <typename T>
+struct is_set_type: std::false_type {};
+
+template <class Key, class Compare, class Allocator>
+struct is_set_type<std::set<Key, Compare, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <map>
+
+namespace container_traits {
+
+template <typename T>
+struct is_map_type: std::false_type {};
+
+template <class Key, class T, class Compare, class Allocator>
+struct is_map_type<std::map<Key, T, Compare, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <set>
+
+namespace container_traits {
+
+template <typename T>
+struct is_multiset_type: std::false_type {};
+
+template <class Key, class Compare, class Allocator>
+struct is_multiset_type<std::multiset<Key, Compare, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <map>
+
+namespace container_traits {
+
+template <typename T>
+struct is_multimap_type: std::false_type {};
+
+template <class Key, class T, class Compare, class Allocator>
+struct is_multimap_type<std::multimap<Key, T, Compare, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <unordered_set>
+
+namespace container_traits {
+
+template <typename T>
+struct is_unordered_set_type: std::false_type {};
+
+template <class Key, class Hash, class KeyEqual, class Allocator>
+struct is_unordered_set_type<std::unordered_set<Key, Hash, KeyEqual, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <unordered_map>
+
+namespace container_traits {
+
+template <typename T>
+struct is_unordered_map_type: std::false_type {};
+
+template <class Key, class T, class Hash, class KeyEqual, class Allocator>
+struct is_unordered_map_type<std::unordered_map<Key, T, Hash, KeyEqual, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <unordered_set>
+
+namespace container_traits {
+
+template <typename T>
+struct is_unordered_multiset_type: std::false_type {};
+
+template <class Key, class Hash, class KeyEqual, class Allocator>
+struct is_unordered_multiset_type<std::unordered_multiset<Key, Hash, KeyEqual, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <unordered_map>
+
+namespace container_traits {
+
+template <typename T>
+struct is_unordered_multimap_type: std::false_type {};
+
+template <class Key, class T, class Hash, class KeyEqual, class Allocator>
+struct is_unordered_multimap_type<std::unordered_multimap<Key, T, Hash, KeyEqual, Allocator>> : std::true_type {};
+
+}
+#pragma once
+#include <stack>
+
+namespace container_traits {
+
+template <typename T>
+struct is_stack_type: std::false_type {};
+
+template <class T, class Container>
+struct is_stack_type<std::stack<T, Container>> : std::true_type {};
+
+}
+#pragma once
+#include <queue>
+
+namespace container_traits {
+
+template <typename T>
+struct is_queue_type: std::false_type {};
+
+template <class T, class Container>
+struct is_queue_type<std::queue<T, Container>> : std::true_type {};
+
+}
+#pragma once
+#include <queue>
+
+namespace container_traits {
+
+template <typename T>
+struct is_priority_queue_type: std::false_type {};
+
+template <class T, class Container, class Compare>
+struct is_priority_queue_type<std::priority_queue<T, Container, Compare>> : std::true_type {};
+
+}

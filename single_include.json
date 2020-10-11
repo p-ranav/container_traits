@@ -58,7 +58,23 @@
         "include/container_traits/has_subscript_operator.h",
         "include/container_traits/has_push.h",
         "include/container_traits/has_pop.h",
-        "include/container_traits/has_top.h"
+        "include/container_traits/has_top.h",
+        "include/container_traits/is_array_type.h",
+        "include/container_traits/is_vector_type.h",
+        "include/container_traits/is_deque_type.h",
+        "include/container_traits/is_list_type.h",
+        "include/container_traits/is_forward_list_type.h",
+        "include/container_traits/is_set_type.h",
+        "include/container_traits/is_map_type.h",
+        "include/container_traits/is_multiset_type.h",
+        "include/container_traits/is_multimap_type.h",
+        "include/container_traits/is_unordered_set_type.h",
+        "include/container_traits/is_unordered_map_type.h",
+        "include/container_traits/is_unordered_multiset_type.h",
+        "include/container_traits/is_unordered_multimap_type.h",
+        "include/container_traits/is_stack_type.h",
+        "include/container_traits/is_queue_type.h",
+        "include/container_traits/is_priority_queue_type.h"
     ],
     "include_paths": ["include"]
 }
