@@ -55,7 +55,10 @@
         "include/container_traits/has_key_eq.h",
         "include/container_traits/has_get_allocator.h",
         "include/container_traits/has_assignment_operator.h",
-        "include/container_traits/has_subscript_operator.h"
+        "include/container_traits/has_subscript_operator.h",
+        "include/container_traits/has_push.h",
+        "include/container_traits/has_pop.h",
+        "include/container_traits/has_top.h"
     ],
     "include_paths": ["include"]
 }

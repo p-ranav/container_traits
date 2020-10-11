@@ -1216,3 +1216,72 @@ public:
 };
 
 } // namespace container_traits
+#pragma once
+#include <type_traits>
+
+namespace container_traits {
+
+template <typename, typename T> struct has_push : std::false_type {};
+
+template <typename C, typename Ret, typename... Args> struct has_push<C, Ret(Args...)> {
+private:
+  template <typename T>
+  static constexpr auto check(T *) ->
+      typename std::is_same<decltype(std::declval<T>().push(std::declval<Args>()...)),
+                            Ret>::type;
+
+  template <typename> static constexpr std::false_type check(...);
+
+  typedef decltype(check<C>(0)) type;
+
+public:
+  static constexpr bool value = type::value;
+};
+
+} // namespace container_traits
+#pragma once
+#include <type_traits>
+
+namespace container_traits {
+
+template <typename, typename T> struct has_pop : std::false_type {};
+
+template <typename C, typename Ret, typename... Args> struct has_pop<C, Ret(Args...)> {
+private:
+  template <typename T>
+  static constexpr auto check(T *) ->
+      typename std::is_same<decltype(std::declval<T>().pop(std::declval<Args>()...)),
+                            Ret>::type;
+
+  template <typename> static constexpr std::false_type check(...);
+
+  typedef decltype(check<C>(0)) type;
+
+public:
+  static constexpr bool value = type::value;
+};
+
+} // namespace container_traits
+#pragma once
+#include <type_traits>
+
+namespace container_traits {
+
+template <typename, typename T> struct has_top : std::false_type {};
+
+template <typename C, typename Ret, typename... Args> struct has_top<C, Ret(Args...)> {
+private:
+  template <typename T>
+  static constexpr auto check(T *) ->
+      typename std::is_same<decltype(std::declval<T>().top(std::declval<Args>()...)),
+                            Ret>::type;
+
+  template <typename> static constexpr std::false_type check(...);
+
+  typedef decltype(check<C>(0)) type;
+
+public:
+  static constexpr bool value = type::value;
+};
+
+} // namespace container_traits
