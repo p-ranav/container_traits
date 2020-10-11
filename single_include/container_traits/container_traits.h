@@ -1558,3 +1558,37 @@ template <typename... Args>
 struct is_container_type<std::priority_queue<Args...>> : std::true_type {};
 
 }
+#pragma once
+
+namespace container_traits {
+
+template<class T, class R = void>  
+struct enable_if_type { typedef R type; };
+
+}
+#pragma once
+#include <type_traits>
+// #include <container_traits/enable_if_type.h>
+
+namespace container_traits {
+
+template<class T, class Enable = void>
+struct has_iterator: std::false_type {};
+
+template<class T>
+struct has_iterator<T, typename enable_if_type<typename T::iterator>::type> : std::true_type{};
+
+}
+#pragma once
+#include <type_traits>
+// #include <container_traits/enable_if_type.h>
+
+namespace container_traits {
+
+template<class T, class Enable = void>
+struct has_const_iterator: std::false_type {};
+
+template<class T>
+struct has_const_iterator<T, typename enable_if_type<typename T::const_iterator>::type> : std::true_type{};
+
+}

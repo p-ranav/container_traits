@@ -76,7 +76,10 @@
         "include/container_traits/is_stack_type.h",
         "include/container_traits/is_queue_type.h",
         "include/container_traits/is_priority_queue_type.h",
-        "include/container_traits/is_container_type.h"
+        "include/container_traits/is_container_type.h",
+        "include/container_traits/enable_if_type.h",
+        "include/container_traits/has_iterator.h",
+        "include/container_traits/has_const_iterator.h"
     ],
     "include_paths": ["include"]
 }
