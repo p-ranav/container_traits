@@ -43,15 +43,20 @@ This enables the ability to write functions like `push_back_or_insert` like belo
 
 ```cpp
 template <typename Container, typename ValueType>
-void push_back_or_insert(Container& c, ValueType&& value) {
-  if constexpr (has_push_back<Container, void(const ValueType& value)>::value) {
+void push_back_or_insert(Container &c, ValueType &&value) {
+  if constexpr (has_push_back<Container, void(const ValueType &)>::value) {
     // has `push_back`
     c.push_back(std::forward<ValueType>(value));
-  } else if constexpr (
-    has_insert<Container, typename Container::iterator(typename Container::iterator, const ValueType&)>::value &&
-    has_end<Container, typename Container::iterator()>::value
-  ) {
-    // no `push_back` but has `insert`
+  } 
+  else if constexpr (has_push<Container, void(const ValueType&)>::value) {
+    // has `push`
+    c.push(std::forward<ValueType>(value));
+  }
+  else if constexpr (has_insert<Container,
+                                  typename Container::iterator(typename Container::iterator,
+                                                               const ValueType &)>::value &&
+                       has_end<Container, typename Container::iterator()>::value) {
+    // has `insert` and `end`
     c.insert(c.end(), std::forward<ValueType>(value));
   }
 }
@@ -65,5 +70,11 @@ int main() {
 
   auto deque = std::deque<float>{1.1f, 2.2f, 3.3f};
   push_back_or_insert(deque, 4.4f);
+
+  auto queue = std::queue<int>{};
+  push_back_or_insert(queue, 1);
+
+  auto priority_queue = std::priority_queue<int>{};
+  push_back_or_insert(priority_queue, 1);
 }
 ```
