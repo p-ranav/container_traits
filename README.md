@@ -5,6 +5,10 @@
 This library provides compile-time utilities for STL containers.
 
 ```cpp
+#include "container_traits.h"
+using namespace container_traits;
+#include <iostream>
+
 int main() {
   std::cout << std::boolalpha;
 
