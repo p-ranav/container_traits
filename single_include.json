@@ -2,6 +2,7 @@
     "project": "Container Traits for Modern C++",
     "target": "single_include/container_traits/container_traits.h",
     "sources": [
+        "include/container_traits/array_size.h",
         "include/container_traits/has_assign.h",
         "include/container_traits/has_begin.h",
         "include/container_traits/has_cbegin.h",

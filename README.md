@@ -1,6 +1,6 @@
 # container_traits
 
-This library enables compile-time checks for whether STL container types have specific member functions with specific signatures. 
+This library provides compile-time utilities for STL containers.
 
 ```cpp
 int main() {
@@ -24,6 +24,8 @@ int main() {
   std::cout << has_data<std::vector<int>, int*()>::value << "\n";   // true
   std::cout << has_data<std::array<int, 3>, int*()>::value << "\n"; // true
   std::cout << has_data<std::list<int>, int*()>::value << "\n";     // false
+
+  std::cout << array_size<std::array<int, 6>>::value << "\n"; // 6
 
 }
 ```
