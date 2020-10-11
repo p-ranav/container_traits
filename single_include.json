@@ -75,7 +75,8 @@
         "include/container_traits/is_unordered_multimap_type.h",
         "include/container_traits/is_stack_type.h",
         "include/container_traits/is_queue_type.h",
-        "include/container_traits/is_priority_queue_type.h"
+        "include/container_traits/is_priority_queue_type.h",
+        "include/container_traits/is_container_type.h"
     ],
     "include_paths": ["include"]
 }
