@@ -1,4 +1,6 @@
-# container_traits
+<p align="center">
+  <img height="35" src="img/logo.png"/>  
+</p>
 
 This library provides compile-time utilities for STL containers.
 
